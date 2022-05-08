@@ -150,8 +150,8 @@ nav{
 
   position: fixed;
   top: 0;
-  left: 50%;
-  transform: translateX(-50%);
+  width: 100vw;
+  z-index: 100;
 }
 
 nav .wrapper{
@@ -166,7 +166,7 @@ ul{
 }
 nav.scroll{
   background: var(--primary-color);
-  width: 100vw;
+  
 }
 
 nav.scroll svg:nth-child(1) path{
@@ -187,7 +187,7 @@ body.menu-expanded{
   overflow: hidden ;
 }
 body.menu-expanded > :not(nav){
-  display: none;
+  visibility: hidden;
 }
 
 .menu, .close-menu,
