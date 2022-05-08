@@ -1,2 +1,2 @@
 # NLW-Return
- Semana de programação para iniciantes da RocketSeat
+ Semana de programação na RocketSeat, Mission Origin.
