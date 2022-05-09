@@ -12,9 +12,11 @@
   --headline: hsl(210, 11%, 15%);
   --paragraph: hsl(210, 9%, 31%);
   --brand-beige:hsl(39, 100%, 97%);
-  --brand-light: hsl(calc(var(--hue)-22), 23%, 89%);
+  --brand-light: hsl(calc(var(--hue) - 22), 23%, 89%);
+  --brand-light2: hsl(calc(var(--hue) + 10), 14%, 97%);
   --bg-light: hsl(180, 14%, 97%);
   --brand-dark:hsl(var(--hue), 100%, 14%);
+  
 
 
   --nav-reight: 7.2rem;
@@ -466,6 +468,7 @@ footer .social-links {
 /* === GERAL ====================== */
 .wrapper {
   width: min(112rem, 100%);
+  
 }
 /* === NAVIGATION ====================== */
 
@@ -482,9 +485,14 @@ nav#navigation .wrapper * {
     transform: initial;
     background-color: initial;
     font-weight: initial;
+    transform: initial;
+    color: initial;
+    background-color: initial;
+    filter: initial;
+  
   }
-  nav#navigation .close-menu
-  nav#navigation .open-menu
+  nav#navigation .close-menu,
+  nav#navigation .open-menu,
   nav#navigation .social-links {
     display: none;
   }
@@ -525,12 +533,16 @@ nav#navigation .wrapper * {
   }
 
   nav#navigation.scroll .menu ul li a {
-    color: var(--brand-light);
+    color: var(--brand-light2);
     opacity: 0.6;
   }
   nav#navigation.scroll .menu a.button {
     border-color: white;
     color: white;
+  }
+
+  nav#navigation .menu li a{
+    transition: opacity 0.4s;
   }
 
   nav#navigation .menu li a:hover {
@@ -559,5 +571,8 @@ nav#navigation .wrapper * {
     nav#navigation .menu li a:hover::after{
       padding-inline: 0.8rem;
       width: 100%;
+    }
+    nav#navigation.scroll .menu li a:hover{
+      opacity: 1;
     }
 }
