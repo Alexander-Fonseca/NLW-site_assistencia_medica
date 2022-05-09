@@ -227,6 +227,12 @@ margin-top: 4.8rem;
 margin-bottom: 8rem;
 }
 
+.menu .button:hover {
+  background: var(--primary-color);
+  color: white;
+
+  filter: brightness(1.3);
+}
 
 body.menu-expanded .logo,
 body.menu-expanded nav button{
@@ -417,9 +423,14 @@ footer .social-links {
 
   opacity: 0;
   visibility: hidden;
+
+  transform: translateY(100%);
+  transition: 200ms;
 }
 
 #backToTopButton.show {
   opacity: 1;
   visibility: visible;
+
+  transform: translateY(0);
 } 
