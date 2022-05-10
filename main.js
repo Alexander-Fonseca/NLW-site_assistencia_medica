@@ -5,7 +5,31 @@ function onScroll() {
 
   showNavOnScroll()
   showBackToTopButtonOnScroll()
+  activeMenuAtCurrentSection()
 }
+
+function activeMenuAtCurrentSection(){
+
+const targeLine = scrollY + innerHeight / 2
+
+// verificar se a seção passou da linha
+// quais dados vou precisar?
+
+const sectionTop = home.offsetTop
+const sectionHeight = home.offsetHeight
+
+const sectionTopReachOrPassedTargetLine 
+
+}
+
+
+
+
+
+
+
+
+
 
 function showNavOnScroll(){
   if(scrollY > 0){
