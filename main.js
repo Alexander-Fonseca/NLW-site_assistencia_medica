@@ -31,11 +31,13 @@ console.log('O topo da seção chegou ou passou da linha?', sectionTopReachOrPas
 //verificar se a base está abaixo da linha alvo
 //quais dados vou precisar?
 
+// a seção termina onde?
 const sectionEndsAt = sectionTop + sectionHeight
 
-const sectionEndPassedTargetLine = 
+// o final da seção passou a linha alvo
+const sectionEndPassedTargetLine = sectionEndsAt <= targetLine
 
-
+console.log('o fundo da seção passou da linha?', sectionEndPassedTargetLine);
 
 
 
