@@ -1,12 +1,15 @@
 window.addEventListener('scroll', onScroll)
-onScroll()
 
+onScroll()
 function onScroll() {
 
   showNavOnScroll()
   showBackToTopButtonOnScroll()
+
   activeMenuAtCurrentSection(home)
-  /* activeMenuAtCurrentSection(services) */
+  activeMenuAtCurrentSection(services)
+  activeMenuAtCurrentSection(about)
+  activeMenuAtCurrentSection(contact)
 }
 
 function activeMenuAtCurrentSection(section){
@@ -23,10 +26,7 @@ const sectionTop = section.offsetTop
 const sectionHeight = section.offsetHeight
 
 // o topo da seção chegou ou ultrapassou a linha alvo
-const sectionTopReachOrPassedTargetLine = targetLine >=sectionTop
-
-//informações dos dados e da lógica
-console.log('O topo da seção chegou ou passou da linha?', sectionTopReachOrPassedTargetLine)
+const sectionTopReachOrPassedTargetLine = targetLine >= sectionTop
 
 //verificar se a base está abaixo da linha alvo
 //quais dados vou precisar?
@@ -37,12 +37,17 @@ const sectionEndsAt = sectionTop + sectionHeight
 // o final da seção passou a linha alvo
 const sectionEndPassedTargetLine = sectionEndsAt <= targetLine
 
-console.log('o fundo da seção passou da linha?', sectionEndPassedTargetLine);
+//limites da seção
+const sectionBoundaries = 
+sectionTopReachOrPassedTargetLine &&  !sectionEndPassedTargetLine 
 
+const sectionId = section.getAttribute('id')
+const menuElement = document.querySelector(`.menu a [href*=${sectionId}]`)
 
-
-
-
+menuElement.classList.remove('active')
+if (sectionBoundaries){
+  menuElement.classList.add('active')
+}
 
 }
 
@@ -92,5 +97,5 @@ ScrollReveal({
 #services .card,
 #about,
 #about header,
-#about .content`);
+#about .content`)
 
